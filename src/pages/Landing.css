@@ -1,0 +1,93 @@
+.landing-hero {
+  min-height: calc(100vh - 9rem);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+  animation: rise-in 700ms ease both;
+}
+
+.landing-copy .brand-mark {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 14vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  text-shadow: 0 0 40px rgba(242, 193, 78, 0.25);
+}
+
+.landing-copy h1 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  color: var(--sand);
+}
+
+.lede {
+  max-width: 38ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.landing-visual {
+  position: relative;
+  min-height: 340px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(61, 207, 154, 0.08), transparent 40%),
+    rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed rgba(242, 193, 78, 0.35);
+  border-radius: 50%;
+}
+
+.orbit-core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: var(--mint);
+}
+
+.scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 28%;
+  background: linear-gradient(to bottom, transparent, rgba(242, 193, 78, 0.08), transparent);
+  animation: scan 4.5s linear infinite;
+}
+
+@media (max-width: 860px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .landing-visual {
+    min-height: 240px;
+    order: -1;
+  }
+}

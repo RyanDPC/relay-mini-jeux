@@ -1,0 +1,100 @@
+.hub {
+  animation: rise-in 500ms ease both;
+}
+
+.hub-head .eyebrow,
+.friends-head .eyebrow,
+.play-head .eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.hub-head h1,
+.friends-head h1,
+.play-head h1 {
+  margin: 0.3rem 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+.game-rail {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.game-rail li {
+  animation: rise-in 500ms ease both;
+  border-bottom: 1px solid var(--line);
+}
+
+.game-rail li.is-archive .game-launch {
+  opacity: 0.55;
+}
+
+.game-rail li.is-archive .game-launch strong {
+  font-size: 1.05rem;
+}
+
+.game-launch {
+  display: grid;
+  grid-template-columns: 7rem 1fr auto;
+  grid-template-areas:
+    "genre title cta"
+    "genre blurb cta";
+  gap: 0.15rem 1.25rem;
+  align-items: center;
+  padding: 1.35rem 0.25rem;
+  transition: background 180ms ease, padding-left 180ms ease;
+}
+
+.game-launch:hover {
+  background: rgba(242, 193, 78, 0.04);
+  padding-left: 0.6rem;
+}
+
+.game-launch .genre {
+  grid-area: genre;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.game-launch strong {
+  grid-area: title;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.game-launch .blurb {
+  grid-area: blurb;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.game-launch .launch-cta {
+  grid-area: cta;
+  font-family: var(--font-mono);
+  color: var(--amber);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 700px) {
+  .game-launch {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "genre cta"
+      "title cta"
+      "blurb blurb";
+  }
+}

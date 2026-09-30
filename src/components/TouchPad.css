@@ -1,0 +1,55 @@
+.touch-pad {
+  display: none;
+  margin-top: 0.75rem;
+  user-select: none;
+  touch-action: none;
+}
+
+@media (pointer: coarse), (max-width: 820px) {
+  .touch-pad {
+    display: grid;
+  }
+}
+
+.touch-pad.dpad {
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  grid-template-columns: repeat(3, 64px);
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.touch-pad.dpad .up {
+  grid-area: up;
+}
+.touch-pad.dpad .left {
+  grid-area: left;
+}
+.touch-pad.dpad .right {
+  grid-area: right;
+}
+.touch-pad.dpad .down {
+  grid-area: down;
+}
+
+.touch-pad.lr {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  max-width: 280px;
+}
+
+.touch-pad button {
+  min-height: 56px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--amber);
+  font-size: 1.25rem;
+  border-radius: var(--radius);
+}
+
+.touch-pad button:active {
+  background: rgba(242, 193, 78, 0.2);
+  color: var(--amber-hot);
+}

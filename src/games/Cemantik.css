@@ -1,0 +1,231 @@
+.cemantik {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.25rem 0.15rem 0.75rem;
+}
+
+.cemantik-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.cemantik-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
+.cemantik-modes .ghost-btn {
+  font-size: 0.72rem;
+  padding: 0.28rem 0.55rem;
+}
+
+.cemantik-modes .ghost-btn.is-on {
+  border-color: var(--mint);
+  color: var(--mint);
+}
+
+.cemantik-thermo {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.cemantik-thermo-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #4a7c8a, #3dcf9a 55%, #f2c14e);
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cemantik-form {
+  display: flex;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.cemantik-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--sand);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.cemantik-input:focus {
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px rgba(61, 207, 154, 0.15);
+}
+
+.cemantik-go {
+  padding-inline: 1.1rem;
+  font-weight: 600;
+}
+
+.cemantik-suggest {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.cemantik-suggest button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.cemantik-suggest button:hover {
+  color: var(--sand);
+  border-color: var(--mint);
+}
+
+.cemantik-flash {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--amber);
+  animation: cemantik-pop 320ms ease both;
+}
+
+.cemantik-flash.is-win {
+  color: var(--mint);
+}
+
+.cemantik-win strong {
+  color: var(--mint);
+  letter-spacing: 0.04em;
+}
+
+.cemantik-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  padding-right: 0.15rem;
+}
+
+.cemantik-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4rem;
+  grid-template-rows: auto auto;
+  column-gap: 0.55rem;
+  row-gap: 0.25rem;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.28);
+  animation: cemantik-pop 280ms ease both;
+}
+
+.cemantik.is-mystery .cemantik-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+}
+
+.cemantik-word {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--sand);
+}
+
+.cemantik-score {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--sand);
+  font-variant-numeric: tabular-nums;
+  min-width: 3.4rem;
+}
+
+.cemantik-lexrank {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.cemantik-bar {
+  grid-column: 1 / -1;
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.cemantik-bar i {
+  display: block;
+  height: 100%;
+  background: #4a7c8a;
+  transition: width 380ms ease;
+}
+
+.cemantik-row.is-found {
+  border-color: rgba(242, 193, 78, 0.55);
+  box-shadow: 0 0 0 1px rgba(242, 193, 78, 0.12);
+}
+
+.cemantik-row.is-found .cemantik-word,
+.cemantik-row.is-found .cemantik-lexrank,
+.cemantik-row.is-found .cemantik-score {
+  color: #ff8a4a;
+}
+
+.cemantik-row.is-found .cemantik-bar i {
+  background: linear-gradient(90deg, #f2c14e, #ff6b6b);
+  width: 100% !important;
+}
+
+@keyframes cemantik-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .cemantik-modes {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .cemantik-word {
+    font-size: 1.02rem;
+  }
+}

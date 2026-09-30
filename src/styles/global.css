@@ -1,0 +1,129 @@
+:root {
+  --ink: #071412;
+  --ink-soft: #0d221e;
+  --panel: rgba(14, 36, 32, 0.72);
+  --line: rgba(242, 193, 78, 0.18);
+  --sand: #e8efe9;
+  --muted: #8aa39a;
+  --amber: #f2c14e;
+  --amber-hot: #ffd978;
+  --mint: #3dcf9a;
+  --danger: #ff6b6b;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --radius: 2px;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--sand);
+  background:
+    radial-gradient(1200px 700px at 85% -10%, rgba(242, 193, 78, 0.18), transparent 55%),
+    radial-gradient(900px 600px at -10% 110%, rgba(61, 207, 154, 0.12), transparent 50%),
+    linear-gradient(160deg, #06110f 0%, #0b1f1c 45%, #102820 100%);
+  background-attachment: fixed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brand-pulse {
+  0%,
+  100% {
+    letter-spacing: 0.08em;
+  }
+  50% {
+    letter-spacing: 0.14em;
+  }
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

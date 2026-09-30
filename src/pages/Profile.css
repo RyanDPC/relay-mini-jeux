@@ -1,0 +1,56 @@
+.profile-page {
+  animation: rise-in 500ms ease both;
+  max-width: 520px;
+}
+
+.profile-page h1 {
+  margin: 0.3rem 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+.profile-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.label-like {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.avatar-row,
+.accent-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+
+.avatar-row button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--sand);
+  font-size: 1.1rem;
+}
+
+.avatar-row button.active {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.accent-row button {
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+
+.accent-row button.active {
+  border-color: var(--sand);
+}

@@ -1,0 +1,90 @@
+.friends {
+  animation: rise-in 500ms ease both;
+}
+
+.add-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+  margin: 1.5rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.add-form .grow {
+  flex: 1 1 220px;
+}
+
+.ok-banner {
+  color: var(--mint);
+  border: 1px solid rgba(61, 207, 154, 0.3);
+  background: rgba(61, 207, 154, 0.08);
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius);
+}
+
+.friends-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.friends-columns h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.friends-columns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.friends-columns li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.muted-tag {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #445;
+  margin-right: 0.4rem;
+}
+
+.dot.on {
+  background: var(--mint);
+  box-shadow: 0 0 8px rgba(61, 207, 154, 0.45);
+}
+
+@media (max-width: 900px) {
+  .friends-columns {
+    grid-template-columns: 1fr;
+  }
+}
